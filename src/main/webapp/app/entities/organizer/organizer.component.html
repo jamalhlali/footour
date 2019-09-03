@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="footourApp.organizer.home.title">Organizers</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-organizer" [routerLink]="['/organizer/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="footourApp.organizer.home.createLabel">
+            Create a new Organizer
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="organizers?.length === 0">
+        <span jhiTranslate="footourApp.organizer.home.notFound">No organizers found</span>
+    </div>
+    <div class="table-responsive" *ngIf="organizers?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="footourApp.organizer.firstName">First Name</span></th>
+            <th><span jhiTranslate="footourApp.organizer.lastName">Last Name</span></th>
+            <th><span jhiTranslate="footourApp.organizer.email">Email</span></th>
+            <th><span jhiTranslate="footourApp.organizer.phoneNumber">Phone Number</span></th>
+            <th><span jhiTranslate="footourApp.organizer.tournament">Tournament</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let organizer of organizers ;trackBy: trackId">
+                <td><a [routerLink]="['/organizer', organizer.id, 'view' ]">{{organizer.id}}</a></td>
+                <td>{{organizer.firstName}}</td>
+                <td>{{organizer.lastName}}</td>
+                <td>{{organizer.email}}</td>
+                <td>{{organizer.phoneNumber}}</td>
+                <td>
+                    <div *ngIf="organizer.tournament">
+                        <a [routerLink]="['/tournament', organizer.tournament?.id, 'view' ]" >{{organizer.tournament?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/organizer', organizer.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/organizer', organizer.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/organizer', { outlets: { popup: organizer.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

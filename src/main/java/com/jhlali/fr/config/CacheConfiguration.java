@@ -46,6 +46,16 @@ public class CacheConfiguration {
             createCache(cm, com.jhlali.fr.domain.User.class.getName());
             createCache(cm, com.jhlali.fr.domain.Authority.class.getName());
             createCache(cm, com.jhlali.fr.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.jhlali.fr.domain.Player.class.getName());
+            createCache(cm, com.jhlali.fr.domain.Coach.class.getName());
+            createCache(cm, com.jhlali.fr.domain.Organizer.class.getName());
+            createCache(cm, com.jhlali.fr.domain.Team.class.getName());
+            createCache(cm, com.jhlali.fr.domain.Team.class.getName() + ".players");
+            createCache(cm, com.jhlali.fr.domain.Team.class.getName() + ".coaches");
+            createCache(cm, com.jhlali.fr.domain.Tournament.class.getName());
+            createCache(cm, com.jhlali.fr.domain.Tournament.class.getName() + ".teams");
+            createCache(cm, com.jhlali.fr.domain.Tournament.class.getName() + ".organizers");
+            createCache(cm, com.jhlali.fr.domain.Location.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,61 @@
+entity Player {
+	firstName String required,
+	lastName String required,
+	email String,
+	phoneNumber String,
+    yearOfBirth Long
+}
+
+entity Coach {
+	firstName String required,
+	lastName String required,
+	email String,
+	phoneNumber String
+}
+
+entity Organizer {
+	firstName String required,
+	lastName String required,
+	email String,
+	phoneNumber String
+}
+
+entity Team {
+	name String required,
+    city String required,
+    country String required
+}
+
+entity Tournament {
+	name String,
+    startDate Instant    
+}
+
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String
+}
+
+
+relationship OneToOne{
+	Tournament{location} to Location
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Tournament{team} to Team,
+    Tournament{organizer} to Organizer,
+    Team{player} to Player,
+    Team{coach} to Coach,
+    
+}
+
+
+
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

@@ -1,0 +1,55 @@
+{
+    "name": "Team",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "player",
+            "otherEntityRelationshipName": "team",
+            "relationshipName": "player"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "coach",
+            "otherEntityRelationshipName": "team",
+            "relationshipName": "coach"
+        },
+        {
+            "relationshipName": "tournament",
+            "otherEntityName": "tournament",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190903135822",
+    "entityTableName": "team",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
