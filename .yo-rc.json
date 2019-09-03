@@ -1,0 +1,45 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "footour",
+    "packageName": "com.jhlali.fr",
+    "packageFolder": "com/jhlali/fr",
+    "serverPort": 8080,
+    "serviceDiscoveryType": "eureka",
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "gradle",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.2.0",
+    "jwtSecretKey": "MGMyOWNkNDg3N2QxZjk2NjI3MTkzYTg5YmRiZmQzZDVkM2VmNmUzYzViNDA2Y2E1MGYxOWZmMDg3NjRlZDkwZWI1YzAyNjkzYzQ5YTAwNTc5NjZkZTUzMWRiOGVkYWViYjE1ZTZkMmE5OTU0MGIzNWM4YmNhZjFlYmNjMDBiNmQ=",
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "blueprints": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "jamalhlali",
+  "repository-name": "footour"
+}
