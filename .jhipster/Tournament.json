@@ -1,0 +1,44 @@
+{
+    "name": "Tournament",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "location",
+            "otherEntityRelationshipName": "tournament",
+            "relationshipName": "location",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "team",
+            "otherEntityRelationshipName": "tournament",
+            "relationshipName": "team"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "organizer",
+            "otherEntityRelationshipName": "tournament",
+            "relationshipName": "organizer"
+        }
+    ],
+    "changelogDate": "20190903135823",
+    "entityTableName": "tournament",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
